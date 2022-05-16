@@ -1,0 +1,11 @@
+##  This commented part is to get a users specific TSprofile path if mapped in AD.
+
+$user=Get-ADUser <samaccountname>|select DistinguishedName
+$userInfo=[ADSI]("LDAP://"+user.DistinguishedName)
+$RDPProfile=$userinfo.TerminalServicesProfilePathwrite-output $RDPProfile
+
+
+##  this is to bulk pull TSprofile in AD
+
+
+
